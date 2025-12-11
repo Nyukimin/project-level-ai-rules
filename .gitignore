@@ -1,0 +1,20 @@
+# プロジェクト固有のディレクトリ（各プロジェクトで個別に管理）
+!common/
+
+# 一時ファイル
+*.tmp
+*.bak
+*~
+
+# OS固有ファイル
+.DS_Store
+Thumbs.db
+
+# 一般的な禁止ファイル
+.env
+.vscode/
+.idea/
+
+# Serena (ローカル専用: Pushしない)
+.serena/
+serena_stub.py
