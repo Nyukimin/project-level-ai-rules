@@ -4,8 +4,12 @@
 # 共通ルールの参照（必須）
 # ============================================
 @rules/common/GLOBAL_AGENT.md
+@rules/common/rules_architecture.md
 @rules/common/rules_backend.md
 @rules/common/rules_frontend.md
+@rules/common/rules_logging.md
+@rules/common/rules_security.md
+@rules/common/rules_testing.md
 
 # ============================================
 # プロジェクト固有ルールの参照
@@ -36,8 +40,7 @@
   - データ取得: `evaluate_script`でサンプリング・統計
   - 特定要素: uid指定での取得は不可（evaluate_scriptで代替）
 - 10,000件以上のデータデバッグは段階的アプローチを採用
-- 詳細は `rules/loganalyzer/rules_domain.md` の「Chrome DevTools MCP使用ガイド」を参照
-  - ※実体は `rules/rules_domain_sample.md` を編集して運用する
+- 詳細は `rules/rules_domain_sample.md` の「Chrome DevTools MCP使用ガイド」を参照（このファイルを編集して運用）
 
 ## プロジェクト固有の禁止事項
 
