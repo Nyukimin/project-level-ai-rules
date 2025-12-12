@@ -97,32 +97,47 @@ common/GLOBAL_AGENT.md（共通ルール - 厚い）
 
 ## 主要なルール内容
 
-### GLOBAL_AGENT.md
+以下の `rules/common/*` は、プロジェクト横断で使う共通ルールを「役割別」に分割したものです。
 
-- AI利用の共通方針（思考過程の明確な提示、作業の進め方）
-- ペアプログラミングにおけるコア原則
-- コード修正における思考憲法
-- 推論・計画の8原則
-- コーディング全般に関する共通ルール
-- テスト・TDDに関する共通ルール
-- 仕様決定プロセス
-- Git運用
-- セキュリティ
-- モジュール安定性ルール
-- 進捗・達成度の評価
-- 調査記録の管理
+### `rules/common/GLOBAL_AGENT.md`
 
-### rules_backend.md
+- AIエージェント運用の**憲法**（全プロジェクト共通の前提・禁止事項）
+- コミュニケーション方針（不確実点の扱い、根拠提示、説明責任）
+- ペアプログラミング原則／コード修正の思考憲法／推論・計画の原則
+- 変更管理（Git運用の最小ルール）、セキュリティ・ログ・調査記録の概要
 
-- Python、Go、C、C++のコーディングスタイル
-- エラーハンドリング
-- Lintingルール（必須）
-- データ処理アプローチの選択原則
+### `rules/common/rules_architecture.md`
 
-### rules_frontend.md
+- 仕様検討〜設計〜技術選定の進め方（5W1H、受け入れ基準、トレードオフ）
+- 設計原則（SOLID / KISS / YAGNI、再利用、DRY）
+- リトライ・バッチ・設定管理・ADR（意思決定記録）の実践指針
 
-- HTML、CSS、JavaScript、TypeScriptのコーディングスタイル
-- Linting・フォーマット（必須）
+### `rules/common/rules_backend.md`
+
+- バックエンド実装の共通規約（Python/Go/C/C++）
+- エラーハンドリング、例外設計、リトライ戦略、ログ出力指針
+- Lint/フォーマットの必須運用（例: ruff、ESLint等への接続も含む）
+- データ処理アプローチ選択（事前定義 vs 事後クレンジング）の判断基準
+
+### `rules/common/rules_frontend.md`
+
+- フロントエンド実装の共通規約（HTML/CSS/JavaScript/TypeScript）
+- Lint/フォーマット/型チェックの必須運用（ESLint/Prettier/tsc 等）
+
+### `rules/common/rules_logging.md`
+
+- ログと調査記録の運用（保存場所、命名規則、Git管理との関係）
+- 非破壊ログ、重複ログ防止、重要ログの扱い、機密情報マスキング
+
+### `rules/common/rules_security.md`
+
+- 機密情報の扱い（`.env`、認証情報、Gitに残さない原則）
+- `.gitignore` テンプレ、依存関係の脆弱性チェック、権限設定、入力バリデーション
+
+### `rules/common/rules_testing.md`
+
+- テスト/品質保証の実践レシピ（TDD、FIRST/AAA、テスト構成・命名）
+- カバレッジ目安、E2E方針、ブラウザ操作テスト時の注意、CIでの扱い
 
 ## 対象言語
 
