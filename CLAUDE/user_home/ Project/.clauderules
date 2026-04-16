@@ -1,0 +1,21 @@
+# Claude Code Rules (Embedded FW Project)
+
+# ============================================
+# グローバルルール（user_home 配下）
+# ============================================
+@../CLAUDE.md
+@../.claude/rules/00-global.md
+@../.claude/rules/10-safety-priority.md
+@../.claude/rules/20-investigation.md
+@../.claude/rules/30-coding-and-architecture.md
+@../.claude/rules/35-chrome-devtools-safety.md
+
+# ============================================
+# プロジェクト固有差分（Project 配下）
+# ============================================
+@.claude/rules/10-safety-priority.md
+@.claude/rules/20-investigation.md
+@.claude/rules/30-coding-and-architecture.md
+@.claude/rules/40-project.md
+@.claude/rules/50-domain.md
+@.claude/rules/60-physical-log.md

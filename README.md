@@ -1,30 +1,51 @@
 # project-level-ai-rules
 
-# AI開発ルールセット
+## AI開発ルールセット
 
-このリポジトリには、AI開発支援（Claude Code、Cursor等）で使用する共通ルールファイルが含まれています。
+このリポジトリには、AI 開発支援（Claude Code、Cursor など）で使う**ルール・手順・判断軸**を、Git で管理しやすい形でまとめています。
 
-## 構成
+## このプロジェクトの意味と意義
+
+- **意味**: 「どの AI ツールにもその場しのぎで渡す」のではなく、**チームや個人で再利用できるルール資産**としてバージョン管理するための置き場です。ホーム直下の共通設定と、リポジトリ単位の差分を分けて考えられるようにしています。
+- **意義**: ツールごとに**配置パス・ファイル形式（例: `CLAUDE.md` / `.mdc` / Skill）が異なる**ため、同一の方針でも「そのツール向けにコピーできる形」として並べ、**運用ドリフト**（Cursor だけ古い、など）を減らすことを目的とします。
+
+## Claude 用と Cursor 用は別フォルダです
+
+このリポジトリでは次のように分離しています。
+
+| フォルダ | 対象 | 中身のイメージ |
+|----------|------|----------------|
+| [`CLAUDE/`](CLAUDE/README.md) | Claude Code / Claude 向け | `~/CLAUDE.md`、`~/.claude/rules/`、プロジェクトの `.clauderules` / `.claude/` など |
+| [`CURSOR/`](CURSOR/README.md) | Cursor 向け | `~/.cursor/rules/*.mdc`、プロジェクトの `.cursorrules` / `.cursor/rules/` など |
+
+**内容の階層や方針は揃える前提**ですが、**ファイル名・拡張子・置き場所はツール仕様どおりに別管理**します。混在させず、使うツールに対応するフォルダだけを参照・コピーしてください。
+
+## 使うときに最初に読むもの（各フォルダの README）
+
+操作手順・ツリー・コピー先はツールごとに異なるため、**必ず次の README を起点にしてください。ルートのこのファイルだけでは配置の詳細は書ききれません。**
+
+- **Claude 系を使う場合**: [`CLAUDE/README.md`](CLAUDE/README.md)
+- **Cursor を使う場合**: [`CURSOR/README.md`](CURSOR/README.md)
+- **両方使う場合**: **両方の README** を読み、それぞれの実機パスへコピーする（同じ内容を1か所にマージするのではなく、**ツール別の既定ディレクトリ**に配置する想定です）。
+
+## 構成（リポジトリの見方）
 
 ```text
 .
-├── README.md                    # リポジトリの概要（このファイル）
-├── .clauderules                 # Claude Code 用ルール参照（例）
-├── .cursorrules                 # Cursor 用ルール参照（例）
-└── rules/                       # ルール本体
-    ├── common/
-    │   ├── GLOBAL_AGENT.md
-    │   ├── rules_architecture.md
-    │   ├── rules_backend.md
-    │   ├── rules_frontend.md
-    │   ├── rules_logging.md
-    │   ├── rules_security.md
-    │   └── rules_testing.md
-    ├── PROJECT_AGENT_sample.md   # プロジェクト固有ルール（テンプレ）
-    └── rules_domain_sample.md    # ドメイン固有ルール（テンプレ）
+├── README.md                 # 本ファイル（プロジェクト全体の位置づけ・入口）
+├── CLAUDE/
+│   └── README.md             # Claude 向け: ツリー・コピー先・運用（必読）
+├── CURSOR/
+│   └── README.md             # Cursor 向け: ツリー・コピー先・運用（必読）
+├── LICENSE
+└── …                         # その他（ツール設定のスタブ等）
 ```
 
-## 使用方法
+各 `README.md` 配下には、`user_home/`（ホーム相当）と ` Project/`（1 プロジェクトのルート相当）の**モック構造**が続きます。詳細は上記リンク先を参照してください。
+
+## 使用方法（任意: プロジェクト直下に `rules/` を置く方式）
+
+以下は、**プロジェクトルートに `rules/common/*.md` を置き、`.clauderules` または `.cursorrules` から `@` 参照する**従来パターンの説明です。Claude / Cursor の**推奨ディレクトリレイアウト**は [`CLAUDE/README.md`](CLAUDE/README.md) と [`CURSOR/README.md`](CURSOR/README.md) を優先してください。
 
 ### 1. プロジェクトへの導入
 
@@ -95,9 +116,9 @@ common/GLOBAL_AGENT.md（共通ルール - 厚い）
 - **共通ルール（厚い）**: 全プロジェクトで適用される一般的な原則を集約
 - **プロジェクト固有ルール（薄い）**: プロジェクト固有の制約とドメイン知識のみを記載
 
-## 主要なルール内容
+## 主要なルール内容（`rules/common/` を使う場合）
 
-以下の `rules/common/*` は、プロジェクト横断で使う共通ルールを「役割別」に分割したものです。
+プロジェクトに `rules/common/` を置いている場合の、**ファイル役割の一覧**です（[`CLAUDE/README.md`](CLAUDE/README.md) / [`CURSOR/README.md`](CURSOR/README.md) で述べるツール別配置とは別レイヤの「役割別分割」の説明です）。
 
 ### `rules/common/GLOBAL_AGENT.md`
 
@@ -160,6 +181,7 @@ common/GLOBAL_AGENT.md（共通ルール - 厚い）
 
 ## 更新履歴
 
+- **2026-04-16**: プロジェクトの位置づけ、`CLAUDE/` と `CURSOR/` の分離、各フォルダ README を入口とする旨を追記
 - **2025-12-11**: 初版公開
   - 共通ルールの集約と整理
   - プロジェクト固有ルールとの分離

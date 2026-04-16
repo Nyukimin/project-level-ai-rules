@@ -1,0 +1,20 @@
+# Cursor Rules (Embedded FW Project)
+
+# ============================================
+# グローバルルール（user_home 配下）
+# ============================================
+@../.cursor/rules/00-global.mdc
+@../.cursor/rules/10-safety-priority.mdc
+@../.cursor/rules/20-investigation.mdc
+@../.cursor/rules/30-coding-and-architecture.mdc
+@../.cursor/rules/35-chrome-devtools-safety.mdc
+
+# ============================================
+# プロジェクト固有差分（Project 配下）
+# ============================================
+@.cursor/rules/10-safety-priority.mdc
+@.cursor/rules/20-investigation.mdc
+@.cursor/rules/30-coding-and-architecture.mdc
+@.cursor/rules/40-project.mdc
+@.cursor/rules/50-domain.mdc
+@.cursor/rules/60-physical-log.mdc
