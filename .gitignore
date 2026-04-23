@@ -1,7 +1,8 @@
 # project-level-ai-rules 用 .gitignore
 #
-# 注意: このリポジトリは CLAUDE/**/.claude や CURSOR/**/.cursor に
-#       テンプレートを含む。ディレクトリ名「.claude」「.cursor」単体を
+# 注意: このリポジトリは CLAUDE/**/.claude や CURSOR/**/.cursor、
+#       CODEX/**/skills にテンプレートを含む。ディレクトリ名「.claude」
+#       「.cursor」「skills」単体を
 #       無視パターンにしないこと（テンプレが追跡されなくなる）。
 
 # ---------------------------------------------------------------------------

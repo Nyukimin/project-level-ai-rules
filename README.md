@@ -2,7 +2,7 @@
 
 ## AI開発ルールセット
 
-このリポジトリには、AI 開発支援（Claude Code、Cursor など）で使う**ルール・手順・判断軸**を、Git で管理しやすい形でまとめています。
+このリポジトリには、AI 開発支援（Claude Code、Cursor、Codex など）で使う**ルール・手順・判断軸**を、Git で管理しやすい形でまとめています。
 
 ## このプロジェクトの意味と意義
 
@@ -17,6 +17,7 @@
 |----------|------|----------------|
 | [`CLAUDE/`](CLAUDE/README.md) | Claude Code / Claude 向け | `~/CLAUDE.md`、`~/.claude/rules/`、プロジェクトの `.clauderules` / `.claude/` など |
 | [`CURSOR/`](CURSOR/README.md) | Cursor 向け | `~/.cursor/rules/*.mdc`、プロジェクトの `.cursorrules` / `.cursor/rules/` など |
+| [`CODEX/`](CODEX/README.md) | Codex 向け | プロジェクトの `AGENTS.md`、`skills/`、必要に応じて `~/.codex/skills/` など |
 
 **内容の階層や方針は揃える前提**ですが、**ファイル名・拡張子・置き場所はツール仕様どおりに別管理**します。混在させず、使うツールに対応するフォルダだけを参照・コピーしてください。
 
@@ -26,7 +27,8 @@
 
 - **Claude 系を使う場合**: [`CLAUDE/README.md`](CLAUDE/README.md)
 - **Cursor を使う場合**: [`CURSOR/README.md`](CURSOR/README.md)
-- **両方使う場合**: **両方の README** を読み、それぞれの実機パスへコピーする（同じ内容を1か所にマージするのではなく、**ツール別の既定ディレクトリ**に配置する想定です）。
+- **Codex を使う場合**: [`CODEX/README.md`](CODEX/README.md)
+- **複数ツールを使う場合**: **各ツールの README** を読み、それぞれの実機パスへコピーする（同じ内容を1か所にマージするのではなく、**ツール別の既定ディレクトリ**に配置する想定です）。
 
 ## 構成（リポジトリの見方）
 
@@ -37,6 +39,8 @@
 │   └── README.md             # Claude 向け: ツリー・コピー先・運用（必読）
 ├── CURSOR/
 │   └── README.md             # Cursor 向け: ツリー・コピー先・運用（必読）
+├── CODEX/
+│   └── README.md             # Codex 向け: ツリー・コピー先・運用（必読）
 ├── LICENSE
 └── …                         # その他（ツール設定のスタブ等）
 ```
@@ -181,6 +185,7 @@ common/GLOBAL_AGENT.md（共通ルール - 厚い）
 
 ## 更新履歴
 
+- **2026-04-23**: `CODEX/` を追加し、`AGENTS.md` / `skills/` ベースの Codex 向け構成を追加
 - **2026-04-16**: プロジェクトの位置づけ、`CLAUDE/` と `CURSOR/` の分離、各フォルダ README を入口とする旨を追記
 - **2025-12-11**: 初版公開
   - 共通ルールの集約と整理
