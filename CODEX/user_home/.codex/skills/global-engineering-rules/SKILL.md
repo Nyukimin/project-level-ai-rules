@@ -64,6 +64,7 @@ description: 全プロジェクト共通の開発判断軸。安全性、簡潔�
 ## 品質・安定性
 
 - 根本原因を優先し、対症療法のみで終わらせない。
+- 高コストまたは反復する検査は実行前にCheck Planを作り、各checkの目的、owner、実行phase、結果consumer、failure action、Evidence有効期限を確認する。wrong-phase、consumer不在、明示された同一保証の有効replacementだけを理由付きで除外／延期し、高コスト、timeout、失敗だけを理由に安全・認証・policy checkを削除しない。曖昧な場合はfail closedで残す。
 - 変更後は再現可能な確認方法と未確認点を残す。
 - 動作確認済みモジュールの挙動変更は、明示指示がある場合のみ行う。
 - 元データは破壊せず、処理は可能な限り冪等にする。
